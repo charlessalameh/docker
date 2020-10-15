@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+    name: "kubcluster-8cda"
+    labels:
+        app: "kubcluster-8cda"
+    annotations:
+        kubernetes.io/ingress.class: addon-http-application-routing
+spec:
+    rules:
+        - host: prod1-kubcluster-8cda.853e9e500d674533931b.uaenorth.aksapp.io
+          http:
+            paths:
+            - path: /
+              backend:
+                serviceName: "kubcluster-8cda"
+                servicePort: 80
