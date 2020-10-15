@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "kubcluster-8cda"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "kubcluster-8cda"
+  template:
+    metadata:
+      labels:
+        app: "kubcluster-8cda"
+    spec:
+      containers:
+        - name: "kubcluster-8cda"
+          image: "reg2020.azurecr.io/kubcluster"
+          ports:
+          - containerPort: 80
